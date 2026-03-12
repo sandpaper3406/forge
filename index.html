@@ -17,6 +17,32 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <aside class="section-rail" aria-label="Section navigation">
+      <button class="rail-dot active" type="button" data-target="hero" aria-label="Go to Home">
+        <span class="rail-mark" aria-hidden="true"></span>
+      </button>
+      <button class="rail-dot" type="button" data-target="about" aria-label="Go to About">
+        <span class="rail-mark" aria-hidden="true"></span>
+      </button>
+      <button class="rail-dot" type="button" data-target="chapters" aria-label="Go to Chapters">
+        <span class="rail-mark" aria-hidden="true"></span>
+      </button>
+      <button class="rail-dot" type="button" data-target="events" aria-label="Go to Events">
+        <span class="rail-mark" aria-hidden="true"></span>
+      </button>
+      <button class="rail-dot" type="button" data-target="programs" aria-label="Go to Programs">
+        <span class="rail-mark" aria-hidden="true"></span>
+      </button>
+      <button class="rail-dot" type="button" data-target="community" aria-label="Go to Community">
+        <span class="rail-mark" aria-hidden="true"></span>
+      </button>
+      <button class="rail-dot" type="button" data-target="membership" aria-label="Go to Membership">
+        <span class="rail-mark" aria-hidden="true"></span>
+      </button>
+      <button class="rail-dot" type="button" data-target="join" aria-label="Go to Join Forge">
+        <span class="rail-mark" aria-hidden="true"></span>
+      </button>
+    </aside>
     <div class="site-shell">
       <header class="topbar">
         <a class="brand" href="index.html">
@@ -53,16 +79,43 @@
         </a>
         <nav class="nav">
           <a href="index.html">Home</a>
-          <a href="#chapters">Chapters</a>
+          <div class="nav-group">
+            <a href="#chapters">Chapters</a>
+            <button
+              class="nav-menu-toggle"
+              type="button"
+              aria-label="Open chapters menu"
+              aria-expanded="false"
+              aria-controls="chapters-menu"
+            >
+              ▾
+            </button>
+            <div class="nav-menu" id="chapters-menu" role="menu">
+              <a href="#chapters">Chapter Overview</a>
+              <a href="chapters/tampa.html">Forge Tampa</a>
+              <button type="button" data-open-modal="join-modal" data-chapter="Forge Spring Hill">
+                Forge Spring Hill
+              </button>
+              <button type="button" data-open-modal="join-modal" data-chapter="Forge Wesley Chapel">
+                Forge Wesley Chapel
+              </button>
+              <button type="button" data-open-modal="join-modal" data-chapter="Forge South Tampa">
+                Forge South Tampa
+              </button>
+              <button type="button" data-open-modal="join-modal" data-chapter="Forge Trinity">
+                Forge Trinity
+              </button>
+            </div>
+          </div>
           <a href="#events">Events</a>
           <a href="#community">Community</a>
-          <a href="#closers">Cigars Are For Closers</a>
-          <a class="nav-cta" href="#join">Join Forge</a>
+          <a href="cigars-are-for-closers.html">Cigars Are For Closers</a>
+          <button class="nav-cta nav-button" type="button" data-open-modal="join-modal">Join Forge</button>
         </nav>
       </header>
 
       <main>
-        <section class="hero">
+        <section class="hero snap-section" id="hero">
           <div class="hero-copy">
             <p class="eyebrow">Florida founders. Executive operators. Technology leaders.</p>
             <h1>Forging Florida’s Technology Leadership Community</h1>
@@ -71,7 +124,7 @@
               business infrastructure.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#join">Join Forge</a>
+              <button class="button button-primary" type="button" data-open-modal="join-modal">Join Forge</button>
               <a class="button button-secondary" href="#chapters">Explore Chapters</a>
             </div>
           </div>
@@ -90,7 +143,7 @@
           </div>
         </section>
 
-        <section class="section intro" id="about">
+        <section class="section intro snap-section" id="about">
           <div class="section-heading">
             <p class="eyebrow">About Forge Florida</p>
             <h2>A statewide technology leadership community with local depth.</h2>
@@ -110,7 +163,7 @@
           </div>
         </section>
 
-        <section class="section" id="chapters">
+        <section class="section snap-section" id="chapters">
           <div class="section-heading inline">
             <div>
               <p class="eyebrow">Chapters</p>
@@ -120,30 +173,45 @@
           </div>
           <div class="card-grid chapter-grid">
             <a class="card chapter-card" href="chapters/tampa.html">
-              <span class="card-kicker">Launching First</span>
+              <span class="card-kicker">Launching Soon</span>
               <h3>Forge Tampa</h3>
               <p>The flagship chapter connecting Tampa technology leaders, providers, and business operators.</p>
             </a>
-            <a class="card chapter-card" href="chapters/st-pete.html">
-              <span class="card-kicker">Chapter 02</span>
-              <h3>Forge St Pete</h3>
-              <p>A regional network for executives, technologists, and service partners across St Pete.</p>
-            </a>
-            <a class="card chapter-card" href="chapters/sarasota.html">
-              <span class="card-kicker">Chapter 03</span>
-              <h3>Forge Sarasota</h3>
-              <p>Professional relationship-building for technology and business leaders on the Gulf Coast.</p>
-            </a>
-            <a class="card chapter-card" href="chapters/orlando.html">
-              <span class="card-kicker">Chapter 04</span>
-              <h3>Forge Orlando</h3>
-              <p>Connecting Central Florida leaders across enterprise tech, vendors, and business services.</p>
-            </a>
+            <button
+              class="card chapter-card chapter-button"
+              type="button"
+              data-open-modal="join-modal"
+              data-chapter="Forge Spring Hill"
+            >
+              <span class="card-kicker">Launching Fall 2026</span>
+              <h3>Forge Spring Hill</h3>
+              <p>A new chapter connecting growth-minded technology leaders, providers, and business professionals north of Tampa Bay.</p>
+            </button>
+            <button
+              class="card chapter-card chapter-button"
+              type="button"
+              data-open-modal="join-modal"
+              data-chapter="Forge Wesley Chapel"
+            >
+              <span class="card-kicker">Launching Fall 2026</span>
+              <h3>Forge Wesley Chapel</h3>
+              <p>Built for executives, operators, and B2B partners serving one of the region’s fastest-growing business corridors.</p>
+            </button>
+            <button
+              class="card chapter-card chapter-button"
+              type="button"
+              data-open-modal="join-modal"
+              data-chapter="Forge South Tampa"
+            >
+              <span class="card-kicker">Launching Winter 2026</span>
+              <h3>Forge South Tampa</h3>
+              <p>A chapter focused on high-value professional relationships, referrals, and leadership connections in South Tampa.</p>
+            </button>
           </div>
-          <p class="section-note">Future expansion includes Forge Lakeland as the statewide network grows.</p>
+          <p class="section-note">Future expansion will include Forge Trinity as the network continues to grow. Click any upcoming chapter to register for launch updates.</p>
         </section>
 
-        <section class="section" id="events">
+        <section class="section snap-section" id="events">
           <div class="section-heading inline">
             <div>
               <p class="eyebrow">Events</p>
@@ -154,7 +222,7 @@
           <div class="card-grid events-grid" id="events-grid"></div>
         </section>
 
-        <section class="section" id="programs">
+        <section class="section snap-section" id="programs">
           <div class="section-heading">
             <p class="eyebrow">Programs</p>
             <h2>Three engines driving the Forge ecosystem.</h2>
@@ -168,7 +236,12 @@
             <article class="card program-card" id="closers">
               <span class="card-kicker">Sales Leadership</span>
               <h3>Cigars Are For Closers</h3>
-              <p>An invite-only executive sales and revenue circle focused on strategic partnerships, deal-making, and trusted introductions.</p>
+              <p>
+                An invite-only companion brand to Forge Florida built for sales leaders, closers,
+                and relationship-driven executives focused on real pipeline and trusted
+                introductions.
+              </p>
+              <a class="text-link" href="cigars-are-for-closers.html">Explore the brand</a>
             </article>
             <article class="card program-card" id="foundation">
               <span class="card-kicker">Future Initiative</span>
@@ -178,7 +251,7 @@
           </div>
         </section>
 
-        <section class="section community-section" id="community">
+        <section class="section community-section snap-section" id="community">
           <div class="section-heading">
             <p class="eyebrow">Community</p>
             <h2>Where founders, technologists, and partners align.</h2>
@@ -208,7 +281,7 @@
           </div>
         </section>
 
-        <section class="section" id="membership">
+        <section class="section snap-section" id="membership">
           <div class="section-heading">
             <p class="eyebrow">Membership</p>
             <h2>Open community access with paid membership pathways.</h2>
@@ -227,7 +300,10 @@
             <article class="card program-card">
               <span class="card-kicker">Seat-Based Circle</span>
               <h3>Closers Membership</h3>
-              <p>Cigars Are For Closers offers a more structured seat-based model for executive sales and business development leaders.</p>
+              <p>
+                Cigars Are For Closers offers a more structured seat-based model for executive
+                sales and business development leaders.
+              </p>
             </article>
           </div>
           <div class="member-wall benefits-wall">
@@ -240,16 +316,17 @@
           </div>
         </section>
 
-        <section class="section cta-section" id="join">
+        <section class="section cta-section snap-section" id="join">
           <p class="eyebrow">Join Forge Florida</p>
           <h2>Build stronger relationships across Florida’s technology and business infrastructure ecosystem.</h2>
           <p>
             Apply to become a member, attend an upcoming event, or connect with the Forge team
-            about chapter growth, partnerships, and community involvement.
+            about chapter growth, partnerships, community involvement, or Closers placement.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="mailto:hello@forgeflorida.com">Apply for Membership</a>
+            <button class="button button-primary" type="button" data-open-modal="join-modal">Apply for Membership</button>
             <a class="button button-secondary" href="mailto:events@forgeflorida.com">Attend an Event</a>
+            <a class="button button-secondary" href="cigars-are-for-closers.html">View Closers</a>
           </div>
         </section>
       </main>
@@ -267,13 +344,65 @@
           <a href="#chapters">Forge Lakeland</a>
           <a href="#events">Events</a>
           <a href="#community">Community</a>
-          <a href="#closers">Cigars Are For Closers</a>
+          <a href="cigars-are-for-closers.html">Cigars Are For Closers</a>
           <a href="mailto:hello@forgeflorida.com">Contact</a>
           <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
         </div>
         <p class="footer-meta">© <span id="year"></span> Forge Florida. Built for the state’s technology leaders.</p>
       </footer>
+    </div>
+
+    <div class="modal" id="join-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="join-modal-title">
+        <button class="modal-close" type="button" aria-label="Close" data-close-modal>
+          ×
+        </button>
+        <p class="eyebrow">Join Forge</p>
+        <h2 id="join-modal-title">Get more information about Forge membership.</h2>
+        <p class="modal-copy">
+          Tell us a bit about you and we’ll prepare the right next step. Submitting this form opens
+          an email draft to the Forge team with your details filled in.
+        </p>
+        <form class="modal-form" id="join-form">
+          <input type="hidden" name="chapter" value="" />
+          <label>
+            Full Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Company
+            <input type="text" name="company" />
+          </label>
+          <label>
+            Role
+            <input type="text" name="role" />
+          </label>
+          <label>
+            Interest
+            <select name="interest">
+              <option value="General Membership">General Membership</option>
+              <option value="Events">Events</option>
+              <option value="Cigars Are For Closers">Cigars Are For Closers</option>
+              <option value="Partnerships">Partnerships</option>
+              <option value="Chapter Launch Updates">Chapter Launch Updates</option>
+            </select>
+          </label>
+          <label>
+            Notes
+            <textarea name="notes" rows="4" placeholder="Tell us what you'd like to learn more about."></textarea>
+          </label>
+          <div class="modal-actions">
+            <button class="button button-primary" type="submit">Send Request</button>
+            <button class="button button-secondary" type="button" data-close-modal>Cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="script.js"></script>
